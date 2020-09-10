@@ -1,0 +1,2 @@
+﻿Import-Module ActiveDirectory
+Get-ADUser -Filter * -Properties ScriptPath, homedrive, homedirectory | Where-Object { $_.ScriptPath -like "cnc_Engineers.bat" } | Select Name, scriptpath, homedrive, homedirectory | Export-Csv c:\scripts\cnc-eng.csv -NoTypeInformation
