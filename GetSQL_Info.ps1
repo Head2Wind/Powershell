@@ -7,7 +7,7 @@ Import-Module -Name 'SQLPS' -DisableNameChecking
 Pop-Location # Now go back to the original location
     }
   }
-  $server = 'ServerNameHere'
+  $server = 'server.name.here'
   $svr = new-object ('Microsoft.SqlServer.Management.Smo.Server') $server
 $svr | Get-Member
 $svr | select Name, Edition, BuildNumber, Product, ProductLevel, Version, Processors, PhysicalMemory, DefaultFile, DefaultLog, MasterDBPath, MasterDBLogPath, BackupDirectory, ServiceAccount, RootDirectory | Out-File C:\Scripts\SQL_inventory\$server-Info.txt -width 120
